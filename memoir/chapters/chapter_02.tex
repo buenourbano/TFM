@@ -183,39 +183,91 @@ Corrección de $\Delta \omega$ para casos extremos:
 \par Borramos el punto $p_{0m}$ y, si $n_t > 1$, insertamos en su posición los nuevos puntos $p_{N+1}, \dotso, p_{N+n_t-1}$. Todas las variables booleanas tiene el valor \texttt{true} para asegurarnos de que los nuevos cálculos se realizan.
 \end{enumerate}
 
-\subsection{Ejemplos de superficies trianguladas}
+\subsubsection{Ejemplos de superficies trianguladas}
 
-\subsubsection{Esfera}
-
+\textbf{Esfera}
+\[\]
 Triangulación de la esfera $x^2 + y^2 + z^2 - 4 = 0$ comenzando por el punto $(1,1,1)$ y paso de longitud $\delta_t = 0.3$. La siguiente imagen muestra los primeros cuatro polígonos delanteros y la situación tras 101 y 1531 triángulos. La triangulación total involucra 1534 triángulos.
 \[\]
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{images/hartmann6.png}
-\caption{Poceso de triangulación de la esfera.}
+\caption{Proceso de triangulación de la esfera.}
 \end{figure}
 
 \newpage
-\subsubsection{Cilindro}
-
+\textbf{Cilindro}
+\[\]
 Triangulación del cilindro $x^2 + y^2 - 1 = 0$ comenzando por el punto $(1,0,0)$ y paso de longitud $\delta_t = 0.2$. 
 \[\]
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{images/hartmann7.png}
-\caption{Poceso de triangulación del cilindro.}
+\caption{Proceso de triangulación del cilindro.}
 \end{figure}
 
 \newpage
-\subsubsection{Toro}
-
+\textbf{Toro}
+\[\]
 Triangulación del cilindro $(x^2+y^2+z^2+0.8775) - 4(x^2+y^2)=0$ comenzando por el punto $(1,0,0.5)$ y paso de longitud $\delta_t = 0.1$.
 \[\]
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{images/hartmann8.png}
-\caption{Poceso de triangulación del toro.}
+\caption{Proceso de triangulación del toro.}
 \end{figure}
 
+\newpage
 \subsection{Ray Tracing en superficies implícitas}
+
+En 1980, Whitted\cite{Whitted80} propuso un método dpara generar imágenes de alta calidad usando modelos geométricos básicos. Este método evolucionó en lo que hoy se conoce como Ray Tracing, donde la interacción entre rayos de luz y objetos en la nauraleza es simulado: la luz, ya sea artificial o natural, rebota con los objetos y esto es lo que llega a nuestros ojos e interpretamos las propiedades de los objetos, véase color, transparencia, brillo... Además la luz indirecta puede rebotar en varios objetos antes de llegar a nuestros ojos.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{images/florez1.png}
+\caption{Rayos de luz rebotando en distintos objetos antes de llegar a nuestros ojos. El plano imagen en la figura se ve cruzado por los rayos; este plano puede contener una representación bidimensional de la escena tridimensional.}
+\end{figure}
+
+Usando esta técnica de renderización es posible obtener una representación realista de  de distintos tipos de escenas.
+\par En la naturaleza la luz proviene de las llamadas fuentes de luz y, tras rebotar en los objetos del medio, algunos de los rayos llegan a nuestros ojos. Por tanto, analizando el problema, podemos darnos cuenta que, computacionalmente hablando, es muy costoso intentar simular todos los rayos provenientes del foco de luz basándonos en que muchos de los rayos nunca llegarán a nuestro ojo. Por esa razón  es mejor modelar el proceso inverso, esto es, trazar los rayos desde el ojo y buscar las intersecciones con  los objetos del medio.
+
+\subsection{El algoritmo de Ray Tracing}
+
+El método del Ray Tracing es de los llamados{ \em píxel a píxel}. Uno o más rayos de luz son trazados en cada uno de los píxeles en un plano imagen o pantalla. El objetivo es encontrar las intersecciones con los objetos del medio conforme vayamos realizando el trazado de los rayos. Generalmente se suele buscar la primera intersección ya que, en caso de haber más de una, suelen estar obstruidas por el propio objeto.
+
+En la figura \ref{florez27} introducimos el proceso de construcción de un rayo. El punto $c$ representa el origen. Un rayo que comienza en este punto se envía a travez de un píxel en la pantalla con dirección $\vec{cs}$. Estos rayos tienen coordenadas con respecto al sistema $uvw$, mientras que el objeto tiene su propio sistema de referencia $xyz$. Esta independencia de los sistemas de referencia permite ver la escena desde cualquier posición arbitraria.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{images/florez2.png}
+\caption{Definición de un rayo cruzando una pantalla. Si el rayo interseca alguna superficie, el color se calcula y asignado al píxel en la pantalla.}
+\label{florez27}
+\end{figure}
+
+Si hay alguna intersección entre el rayo y el objeto el color es calculando tomando en cuenta la dirección del vector normal del punto de intersección y la posición de las luces. La aportación de las luces indirectas también se calcula. La suma de todas las posibles aportaciones se usa para asignar el color correspondiente en el píxel.
+\[\]
+\textbf{Análisis de la intersección}
+\[\]
+Un rayo se define como:
+\begin{equation}
+\begin{split}
+x = c_x + t(x_s - c_x) \\
+y = c_y + t(y_s - c_y) \\
+z = c_z + t(y_z - c_z)
+\end{split}
+\nonumber
+\end{equation}
+
+Donde $(c_x,c_y,c_z)$ es origen o punto de vista, $(x_s,y_s,z_s)$ es el punto donde el rayo cruza la pantalla y $t$ es el parámetro del rayo.
+\par La intersección entre la superfície implícita $f(x,y,z) = 0$ y el rayo viene definida por la ecuación:
+
+$$g(t) = 0$$
+
+donde $g(t)$ es la función $g : \mathbb{R}_0 \to \mathbb{R}^3$ definida por:
+
+$$g(t) \equiv f(c_x + t(x_s - c_x), c_y + t(y_s - c_y), c_z + t(y_z - c_z))$$
+
+De este modo, el problema se reduce a encontrar las raíces de la función $g$.
+\par Estas soluciones se sustituyen en la definición parametrica del rayo para encontrar el punto de intersección y el valor del vector normal.
+\par Existen muchas maneras  de encontrar las raíces de $g$. Las manera más clásicas son el método de la bisección o de Newton\cite{Hart01}. También existen de otro tipo como: técnicas fuzzy,\cite{Foufou96} aritmética de intervalos\cite{Mitchell90} o constantes de Lipschitz.\cite{Kalra89} 
