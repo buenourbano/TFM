@@ -2,7 +2,7 @@
 
 \section{Introducción}
 
-Las superficies implícitas se usan en la ciencia de computación gráfica desde los años 70, pero su uso e importancia han ido creciendo en años recientes ya que puede ser usados para describir objetos en espacios de dimensión arbitraria. En este Trabajo Fin de Máster nos centraremos en objetos de dimensión dos y tres. Cualquier objeto matemático se puede definir de una forma particular, luego nos cabe preguntarnos porqué las superficies en forma implícita se han popularizado tanto y la respuesta la encontramos en que la expresión implícita de una superficie suele ser compacta y manejable frente a la expresión paramétrica, por ejemplo, la expresión paramétrica de la esfera unidad es la siguiente:
+Las superficies implícitas se usan en la ciencia de computación gráfica desde los años 70 para modelar objetos geométricos, pero su uso e importancia han ido creciendo en años recientes ya que puede ser usados para describir objetos en espacios de dimensión arbitraria. En este Trabajo Fin de Máster nos centraremos en objetos de dimensión dos y tres. Cualquier objeto matemático se puede definir de una forma particular, luego nos cabe preguntarnos porqué las superficies en forma implícita se han popularizado tanto y la respuesta la encontramos en que la expresión implícita de una superficie suele ser compacta y manejable frente a la expresión paramétrica, por ejemplo, la expresión paramétrica de la esfera unidad es la siguiente:
 
 $$X(u,v) = (cos(u)sen(v),sen(u)sen(v),cos(v)) \hspace{1.5cm} (u,v) \in [0,2\pi] \times [0,\pi]$$
 
@@ -11,6 +11,11 @@ Y la forma implícita es:
 $$f(x,y,z) = x^2 + y^2 + z^2 - 1$$
 
 Queda claro que en este ejemplo las propiedades que hemos mencionado.
+\par 
+Aunque hemos mencionado las ventajas de usar la forma implícita para la modelización y visualización de superficies, su principal debilidad es la cantidad de tiempo que necesitan para la visualización directa, véase usando ray tracing. \cite{Groot05} Otra de las debilidades de las superficies en forma implícita es la dificultad de controlar la forma delas superficies durante una visualización rápida en un entorno interactivo.
+\par Esto lleva a que las representaciones paramétricas sigan siendo populares hoy en día gracias a la relativamente rápida renderización que presentan.
+\par Aún presentando estas debilidades, las superficies son una forma flexible de crear objetos complejos ya que ofrecen una clasificación manejable y clara de conjuntos de puntos, es decir, es fácil saber si un punto del espacio se encuentra { \em dentro}, { \em fuera} o en la superficie.
+\par Además también se pueden usar para la representación de nubes de puntos, por ejemplo, en imágenes de datos médicos y reconstrucción de objetos representados como medias de conjuntos de puntos. \cite{Benedet05} \cite{Peiro06}
 
 \section{Descripción del problema}
 
@@ -37,7 +42,7 @@ $$f(x,y,z) = - x^2 - y^2 - z^2 + 1$$
 
 Ahora que hemos descrito las ventajas de las superficies dadas de forma implícita queremos ver los métodos para crear la representación implícita de objetos arbitrarios. Existen dos tipos de guías para la creación de la representación implícita de un objeto.
 
-La primera manera usa la expresión paramétrica  de una primitiva o un "parche" como entrada. La representación implícita del objeto se genera usando operaciones simbólicas para la expresión paramétrica. Este tipo de métodos se llaman { \em métodos de eliminación de variables}.
+La primera manera usa la expresión paramétrica  de una primitiva o un { \em parche} como entrada. La representación implícita del objeto se genera usando operaciones simbólicas para la expresión paramétrica. Este tipo de métodos se llaman { \em métodos de eliminación de variables}.
 
 La segunda manera comienza comienza con un mallado poligonal o una nube de puntos. El iso-valor, que provee información sobre una posición particular del punto, puede ser calculado directamente de esta representación. Entonces el iso-valor significa si el punto está dentro, fuera o en la superficie.
 
@@ -312,4 +317,4 @@ Si $f_i$ no es reducible respecto de $f_j$ entonces $f_i$se reduce a $r$ mediant
 	\end{enumerate}
 \end{definition}
 
-Podemos encontrar más información en \cite{Berchtold00}, \cite{Gallo91} o \cite{Gallo95}.
+Podemos encontrar más información en \cite{Berchtold00}, \cite{Gallo91_2} o \cite{Gallo91_1}.
