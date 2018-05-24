@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,11pt]{book}
 %\documentclass[a4paper,twoside,11pt,titlepage]{book}
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
@@ -6,8 +6,7 @@
 \usepackage{fullpage, mathpazo, amsmath, amsthm, amssymb, amsfonts, nicefrac}
 \usepackage{vmargin}
 
-\usepackage[sorting=none,backend=bibtex]{biblatex}
-\addbibresource{references.bib}
+\usepackage{cite}
 
 % \usepackage[style=list, number=none]{glossary} %
 %\usepackage{titlesec}
@@ -51,11 +50,11 @@
 
 
 \hypersetup{
-pdfauthor = {\myName jesusbuenourbano@gmail.com},
+pdfauthor = {\myName},
 pdftitle = {\myTitle},
 pdfsubject = {},
-pdfkeywords = {palabra_clave1, palabra_clave2, palabra_clave3, ...},
-pdfcreator = {LaTeX con el paquete ....},
+pdfkeywords = {}
+pdfcreator = {TeX Live},
 pdfproducer = {pdflatex}
 }
 
@@ -189,8 +188,7 @@ pdfproducer = {pdflatex}
 \setlength{\parskip}{5pt}
 
 \input{chapters/chapter_01}
-%
-%\input{capitulos/02_EspecificacionRequisitos}
+\input{chapters/chapter_02}
 %
 %\input{capitulos/03_Planificacion}
 %
@@ -207,10 +205,9 @@ pdfproducer = {pdflatex}
 %\chapter{Conclusiones y Trabajos Futuros}
 %
 %
-\thispagestyle{empty}
 \nocite{*}
-\printbibliography\addcontentsline{toc}{chapter}{Bibliografía}
-%\bibliographystyle{alpha}
+\bibliography{references}\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliographystyle{alpha}
 %
 %\appendix
 %\input{apendices/manual_usuario/manual_usuario}
