@@ -270,4 +270,24 @@ $$g(t) \equiv f(c_x + t(x_s - c_x), c_y + t(y_s - c_y), c_z + t(y_z - c_z))$$
 
 De este modo, el problema se reduce a encontrar las raíces de la función $g$.
 \par Estas soluciones se sustituyen en la definición parametrica del rayo para encontrar el punto de intersección y el valor del vector normal.
-\par Existen muchas maneras  de encontrar las raíces de $g$. Las manera más clásicas son el método de la bisección o de Newton\cite{Hart01}. También existen de otro tipo como: técnicas fuzzy,\cite{Foufou96} aritmética de intervalos\cite{Mitchell90} o constantes de Lipschitz.\cite{Kalra89} 
+\par Existen muchas maneras  de encontrar las raíces de $g$. Las manera más clásicas son el método de la bisección o de Newton\cite{Hart01}. También existen de otro tipo como: técnicas fuzzy,\cite{Foufou96} aritmética de intervalos\cite{Mitchell90} o constantes de Lipschitz.\cite{Kalra89}
+
+\subsection{Ray Tracing eficiente}
+
+Como ya hemos comentado el principal problema del algoritmo de Ray Tracing es la falta de eficiencia. Muchos autores han propuesto diferentes técnicas de mejora de la eficiencia pero se pueden clasificar en tres grupos:
+
+\begin{itemize}
+\item Intersecciones más rápidas.
+\item Trazar menor cantidad de rayos.
+\item Generalización de los rayos.
+\end{itemize}
+
+La técnica más básica para acelerar el Ray Tracing es el llamado{ \em volumen delimitador o límite},que consiste en crear un volumen que contenga a nuestro objeto y que el cálculo de la intersección de los rayos con éste sea menos costoso que con el objeto en sí. La primera propuesta de volumen delimitador fue la esfera\cite{Whitted80} por la simplicidad y por la facilidad para probar la intersección de los rayos con ésta. La idea es recubrir coda objeto con una esfera, si un rayo interseca a una esfera, entonces se analiza el caso dentro de la esfera, en caso contrario no es necesario. Si además añadimos lo que se suele llamar{ \em jerarquía} el orden del algoritmo se puede reducir a $log(n)$.
+\par Otra técnica bastante común en la literatura especializada es la subdivisión del espacio en la cual el espacio que rodea a nuestro objeto se divide y se descartan las subdivisiones que no contienen parte del objeto alguno. Podemos dividir el espacio de manera regular o de manera adaptativa como con la poligonalización, pero conlleva los mismos inconvenientes.\\ La ventaja que  tiene este método es que, al ordenar las divisiones, sólo hay que probar el rayo para cada una de éstas en lugar de para el espacio completo para buscar la primera intersección.
+\par Ya como final tenemos las llamadas técnicas direccionales en la que se mejora la técnica anterior discretizando también las direcciones.
+
+\section{Conclusiones}
+
+
+En este capítulo hemos visto distintas maneras de representar y visualizar superficies expresadas de forma implícita, de las cuales ya hemos nombrado sus ventajas e inconvenientes. En términos de coste computacional y velocidad de renderización éstas no presentan ningún reto y presentan una serie de propiedades que las hacen muy atractivas.
+\par En el siguiente capítulo haremos una introducción al Análisis de Intervalos para mejorar la capacidad de computación y tratar de solventar los problemas de redondeo de las máquinas debido a los puntos flotantes.
