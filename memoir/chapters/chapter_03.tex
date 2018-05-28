@@ -1,0 +1,26 @@
+\chapter{Análisis de intervalos}
+
+El Análisis de Intervalos es una rama de las Matemáticas que lidia con los proclemas de redondeo debido al uso de la aritmética de coma flotante. Los ordenadores tienen registros de coma flotante para representar los números reales. Como es bien sabido, hay número reales que no tienen representación finita, por esa razón estos nñumeros tienen que ser redondeados.
+\par Este tipo de situación crea problemas de imprecisión numérica que se puede propagar y acumular a los largo de los algoritmos, en especial en aquellos que son recursivos.
+\par Aunque es posible trabajar con un gran tamaño de bits para representar a los números, este conjunto de números es, de hecho, una representación digital que, obviamente, no tiene las mismas propiedades que el conjunto de números reales.
+\par Un ejemplo muy básico puede mostarnos este problema:
+\begin{itemize}
+	\item a = \texttt{random()}
+	\item b = \texttt{random()}
+	\item c = a + b
+	\item c = c - a - b
+\end{itemize}
+Por lógica de como trabajamos con el conjunto de números reales se esperaría que el valor final de $c$ sea cero, pero este puede no ser el caso dependiendo del programa de cálculo que tomemos en un ordenador convencional.
+\par Hay una gran cantidad de áreas de investigación en las cuales en Análisis de Intervalos ha sido aplicado para mantener la precisión numérica: Ingeniería de control y supervisión, modelización geométrica y diseño por ordenador.
+\par Aparte también hay una serie de{ \em catástrofes} documentadas que podrían haber sido evitadas usando Análisis de Intervalos. Por ejemplo:
+\begin{itemize}
+	\item Un misil Patriot falló debido a la acumulación de errores de redondeo.
+	\item La explosión del Arianne 5 causada por un error de exceso.
+\end{itemize}
+En este capítulo presentaremos la nociones, operaciones y propiedades básicas del Análisis de Intervalos. Además también haremos una introducción al Análisis de intervalos Modal que completa la definición clásica de Análisis de Intervalos.
+
+\section{Planteamiento}
+
+La computación numérica de problemas teóricos en un ordenador requiere que los número sreales $\mathbb{R}$ sean representados con una cantidad limitada de cifras decimales. Por supuesto, es posible usar un conjunto de números suficientemente grande de números con una gran cantidad de cifras decimales, pero aún así habrá números reales que no podrán ser representados.
+\par Esto significa que, cuando traducimos un problema teórico a un problema computacional, estamos trabajando con un conjunto de{ \em números digitales}, llámese DI, también conocidos como números en coma flotante.
+\par Los números reales dan soporte a aquellos modelos donde las magnitudes continuas están presentaes. Sin embargo, como sabemos, los ordenadores trabajan con truncamiento de números reales. Por tanto, es posible que parate de la información se pierda. Las operaciones deberían restringirse a un intervalo obtenido por medias de redondeo, lo que nos da una identificaciñon operacional de los valores calculados.

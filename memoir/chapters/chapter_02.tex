@@ -8,7 +8,12 @@ Escribir introducción.
 
 Una superficie se dice algebraica si se define por polinomios cuyo grado indica el grado de la superficie. El grado indica el número de intersecciones de la superficie y una recta.\cite{Bloomenthal97} Por ejemplo un plano tiene grado 1 mientras que una esfera tiene grado 2. El uso de polinomios tiene la ventaja de ser menos costoso, en tiempo de renderización, que cualquier otra representación analítica general.
 \par Las superficies algebraicas más comunes son las cuadráticas. Este tipo de superficies son fáciles de renderizar son muy pocos parámetros para controlar su forma, además, es posible usar coordinadas homogéneas para aplicar transformaciones afines. A continuación mostramos típicas superficies cuadráticas como son la esfera, el cilindro y el cono.
-\par INCLUIR IMAGEN
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{images/florez4.png}
+	\caption{Ejemplos básicos de superficies cuadráticas.}
+\end{figure}
 
 \subsection{Blobs}
 
@@ -21,8 +26,14 @@ f(x,y,z) = \sum_{i=1}^{n} b_i e^{-a_i r_i^2} - 1
 \end{equation}
 
 donde cada función está centrada en un término $r$. El término $r$ se calcula como $r(x,y,z) = \sqrt{(x - x_i)^2 + (y-y_i)^2 + (z-z_i)^2}$. El término $b$ representa la altura de la función y el término $a$ es la desviación estándar. El efecto de la función blob se puede modificar cambiando los parámetros.
-\par INCLUIR IMAGEN
-\par La función exponencial define una esfera gaussiana que tiende a infinito a la par que la exponencial tiende a cero. Esto significa que cada esfera gaussiana influye sibre las demás sin importar la separación que exista entre ellas. Los objetos flexibles\cite{Wyvill86} computan als esferas usando aproximaciones polinomiales.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{images/florez3.png}
+	\caption{Ejemplo de sumas de esferas gaussianas.}
+\end{figure}
+
+La función exponencial define una esfera gaussiana que tiende a infinito a la par que la exponencial tiende a cero. Esto significa que cada esfera gaussiana influye sibre las demás sin importar la separación que exista entre ellas. Los objetos flexibles\cite{Wyvill86} computan als esferas usando aproximaciones polinomiales.
 
 \section{Métodos de visualización}
 
@@ -287,7 +298,6 @@ La técnica más básica para acelerar el Ray Tracing es el llamado{ \em volumen
 \par Ya como final tenemos las llamadas técnicas direccionales en la que se mejora la técnica anterior discretizando también las direcciones.
 
 \section{Conclusiones}
-
 
 En este capítulo hemos visto distintas maneras de representar y visualizar superficies expresadas de forma implícita, de las cuales ya hemos nombrado sus ventajas e inconvenientes. En términos de coste computacional y velocidad de renderización éstas no presentan ningún reto y presentan una serie de propiedades que las hacen muy atractivas.
 \par En el siguiente capítulo haremos una introducción al Análisis de Intervalos para mejorar la capacidad de computación y tratar de solventar los problemas de redondeo de las máquinas debido a los puntos flotantes.
