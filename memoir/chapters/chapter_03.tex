@@ -24,3 +24,108 @@ En este capítulo presentaremos la nociones, operaciones y propiedades básicas 
 La computación numérica de problemas teóricos en un ordenador requiere que los número sreales $\mathbb{R}$ sean representados con una cantidad limitada de cifras decimales. Por supuesto, es posible usar un conjunto de números suficientemente grande de números con una gran cantidad de cifras decimales, pero aún así habrá números reales que no podrán ser representados.
 \par Esto significa que, cuando traducimos un problema teórico a un problema computacional, estamos trabajando con un conjunto de{ \em números digitales}, llámese DI, también conocidos como números en coma flotante.
 \par Los números reales dan soporte a aquellos modelos donde las magnitudes continuas están presentaes. Sin embargo, como sabemos, los ordenadores trabajan con truncamiento de números reales. Por tanto, es posible que parate de la información se pierda. Las operaciones deberían restringirse a un intervalo obtenido por medias de redondeo, lo que nos da una identificaciñon operacional de los valores calculados.
+\par Dados dos valores reales $\underline{a}$ y $\overline{a}$, un intervalo $A$ se define como:
+
+\begin{equation}
+A = [\underline{a},\overline{a}] = \{ x \in \mathbb{R} : \underline{a} \leq x \leq \overline{a} \}
+\nonumber
+\end{equation}
+
+en donde $\underline{a}$ y $\overline{a}$ se conocen como el ínfimo y el supremo del intervalo respectivamente.
+\par FRASE QUE NECESITO REVISAR. El uso del Análisis de Intervalos con números digitales nos proporciona un control automático de los errores de redondeo.
+\par En la construcción de intervalos, denotados por $I(\mathbb{R})$, muchas de las propiedades de los números reales se pierden, véase la propiedad distributiva, y se obtienen otras como la relación de inclusión.
+\par Los ordenadores trabajan con el conjunto $DI$, por esa razón el conjunto de intervalos con base en $DI$, denotado por $I(DI)$, es el usado para las operaciones algorítmicas. Esto significa que, mientras $I(DI)$ admita operaciones sobre el conjunto $DI$ para ser tratadas por ordenador, se puede establecer un modelo analítico de operaciones y relaciones de los intervalos análogo al de los intervalos $I(\mathbb{R})$.
+\par Como los intervalos que trataremos a a partir de ahora no son intervalos de números reales significa que los algoritmos que aplicamos a éstos deberán ser modificados para adaptarse a la nueva aritmética.
+
+\section{Relaciones entre intervalos}
+
+Las relaciones entre los intervalos son equivalentes a algunas relaciones entre los límites del intervalo. Aunque la definición de las relaciones a veces no son evidentes, hay una norma general de tomar la definición más útil en cada caso. Lo importante esobtener relaciones parecidas a los intervalos de números reales.
+
+\begin{definition}
+Se dice que dos intervalos $A$ y $B$ son iguales, denotado por $A = B$, si para todo $a \in A$ exite $b \in B$ tal que $a = b$ y viceversa. En función de los límites:
+
+$$A = B \iff \underline{a} = \underline{b} \text{ y } \overline{a} = \overline{b}$$
+\end{definition}
+
+\begin{definition}
+Se dice que dados dos intervalos, $A$ y $B$, $A < B$ si para todo $a \in A$ y $b \in B$ se tiene que $a < b$. En función de los límites:
+
+$$A < B \iff \overline{a} < \underline{b}$$
+\end{definition}
+
+\begin{definition}
+Se dice que dados dos intervalos, $A$ y $B$, $A \leq B$ si para todo $a \in A$ existe $b \in B$ tal que $a \leq b$ y para todo $b \in B$ existe $a \in A$ tal que $a \leq b$. En función de los límites:
+
+$$A \leq B \iff \underline{a} \leq \underline{b} \text{ y } \overline{a} \leq \overline{b}$$
+\end{definition}
+
+\begin{definition}
+Se dice que dados dos intervalos, $A$ y $B$, $A \subset B$ si para todo $a \in A$ se tiene que $a \in B$. En función de los límites:
+
+$$A \subset B \iff \underline{a} \geq \underline{b} \text{ y } \overline{a} \leq \overline{b}$$
+\end{definition}
+
+\begin{definition}
+Se dice que dados dos intervalos, $A$ y $B$, $A$ es incidente en $B$, $A =_{\nparallel} B$, si $A \cap B \neq \emptyset$. En función de los límites:
+
+$$A =_{\nparallel} B \iff max(\underline{a},\underline{b}) \leq min(\overline{a},\overline{b})$$
+\end{definition}
+
+\section{Operaciones de Aritmética de Intervalos}
+
+Las operaciones de los intervalos se basan en la Teoría de Conjuntos. De esta menera es posible definir las operaciones mediante medias de los límites de los intervalos.
+\par Hay ciertas condiciones que deben cumplir las operaciones:
+
+\begin{itemize}
+	\item El resultado de una operació entre intervalos ha de ser otro intervalo.
+	\item La restricción de una operación de intervalos entre dos intervalos particulares debe coincidir con la misma operación realizada entre intervalos reales.
+	\item Todas las operaciones entre elementos particulares de ambos intervalos deben de estar contenidas en el intervalo final. Esto es conocido como el Principio de Inclusión.
+\end{itemize}
+
+De acuerdo a estas condiciones, las operaciones se definen por la expresión:
+
+\begin{equation}
+AwB = \{ awb : a \in A, b \in B \}
+\end{equation}
+
+donde $w$ representa cualquiera de las operaciones.
+\par La ecuación general de las operaciones de Aritmética de Intervalos es:
+
+\begin{equation}
+AwB = [ min(\underline{a}w\underline{b},\underline{a}w\overline{b},\overline{a}w\underline{b},\overline{a}w\overline{b}), max(\underline{a}w\underline{b},\underline{a}w\overline{b},\overline{a}w\underline{b},\overline{a}w\overline{b}) ]
+\nonumber
+\end{equation}
+
+Por tanto, las cuatro operaciones básicas se definen como:
+
+\begin{equation}
+\begin{split}
+[\underline{a},\overline{a}] + [\underline{b},\overline{b}] = [\underline{a} + \underline{b},\overline{a} + \overline{b}] \\
+[\underline{a},\overline{a}] - [\underline{b},\overline{b}] = [\underline{a} - \overline{b},\overline{a} - \underline{b}] \\
+[\underline{a},\overline{a}] * [\underline{b},\overline{b}] = [min(\underline{a}\underline{b},\underline{a}\overline{b},\overline{a}\underline{b},\overline{a}\overline{b}), max(\underline{a}\underline{b},\underline{a}\overline{b},\overline{a}\underline{b},\overline{a}\overline{b})] \\
+[\underline{a},\overline{a}] / [\underline{b},\overline{b}] = [\underline{a},\overline{a}]*[\frac{1}{\overline{b}},\frac{1}{\underline{b}}] \text{ si } 0 \notin [\underline{b},\overline{b}]
+\end{split}
+\nonumber
+\end{equation}
+
+\section{Intervalos modales}
+
+El Análisis de Intervalos Modales, MIA por sus siglas en inglés, es un complemento lógico del Análisis de Intervalos clásico queincluye herramientas para resolver incertidumbre cuantificada. Para alcanzar este objetivo, la versión clásica se asocia con un cuantificador.
+\par Un intervalo modal se define como un par $(I,Q)$ donde $I$ es un intervalo clásico y $Q$ es un cuantificador modal, véase $\forall$ o $\exists$ llamados universal y existencial respectivamente. El conjunto de intervalos modales se representa por $I^*(\mathbb{R})$. Si el intervalo modal se asocia con un cuantificador existencial se llama{ \em propio} y en caso de que esté asociado con un cuantificador universal se llama{ \em impropio}. La representación canónica de un intervalo modal es:
+
+\begin{itemize}
+	\item Intervalo propio: $X = [a,b] = ([a,b]',\exists)$ si $a \leq b$
+	\item Intervalo impropio: $X = [a,b] = (b,a]',\forall)$ si $a \geq b$
+	\item Intervalo POINT-WISE: $X = [a,b] = ([a,b]',\{ \exists, \forall \})$ si $a = b$
+\end{itemize}
+
+donde la notación $'$ indica un intervalo clásico.
+\par Un intervalo POINT-WISE pude ser considerado tanto propio como impropio.
+\par El procesode construcción de intervalos modales se completa con el concepto de cuantificador modal $Q$ definido por:
+
+\begin{equation}
+Q(x,X)P(x) := \left\{ \begin{split}
+nvnndipns \\ dnforibg
+\end{split} \right.
+\nonumber
+\end{equation}
