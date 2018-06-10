@@ -99,12 +99,12 @@ AwB = [ min(\underline{a}w\underline{b},\underline{a}w\overline{b},\overline{a}w
 Por tanto, las cuatro operaciones básicas se definen como:
 
 \begin{equation}
-\begin{split}
-[\underline{a},\overline{a}] + [\underline{b},\overline{b}] = [\underline{a} + \underline{b},\overline{a} + \overline{b}] \\
-[\underline{a},\overline{a}] - [\underline{b},\overline{b}] = [\underline{a} - \overline{b},\overline{a} - \underline{b}] \\
-[\underline{a},\overline{a}] * [\underline{b},\overline{b}] = [min(\underline{a}\underline{b},\underline{a}\overline{b},\overline{a}\underline{b},\overline{a}\overline{b}), max(\underline{a}\underline{b},\underline{a}\overline{b},\overline{a}\underline{b},\overline{a}\overline{b})] \\
-[\underline{a},\overline{a}] / [\underline{b},\overline{b}] = [\underline{a},\overline{a}]*[\frac{1}{\overline{b}},\frac{1}{\underline{b}}] \text{ si } 0 \notin [\underline{b},\overline{b}]
-\end{split}
+\begin{tabular}{l}
+$[\underline{a},\overline{a}] + [\underline{b},\overline{b}] = [\underline{a} + \underline{b},\overline{a} + \overline{b}]$ \\
+$[\underline{a},\overline{a}] - [\underline{b},\overline{b}] = [\underline{a} - \overline{b},\overline{a} - \underline{b}]$ \\
+$[\underline{a},\overline{a}] * [\underline{b},\overline{b}] = [min(\underline{a}\underline{b},\underline{a}\overline{b},\overline{a}\underline{b},\overline{a}\overline{b}), max(\underline{a}\underline{b},\underline{a}\overline{b},\overline{a}\underline{b},\overline{a}\overline{b})]$ \\
+$[\underline{a},\overline{a}] / [\underline{b},\overline{b}] = [\underline{a},\overline{a}]*[\frac{1}{\overline{b}},\frac{1}{\underline{b}}] \text{ si } 0 \notin [\underline{b},\overline{b}]$
+\end{tabular}
 \nonumber
 \end{equation}
 
@@ -124,8 +124,32 @@ donde la notación $'$ indica un intervalo clásico.
 \par El procesode construcción de intervalos modales se completa con el concepto de cuantificador modal $Q$ definido por:
 
 \begin{equation}
-Q(x,X)P(x) := \left\{ \begin{split}
-nvnndipns \\ dnforibg
-\end{split} \right.
+Q(x,X)P(x) := \left\{ \begin{tabular}{l l l}
+$(\exists x \in X')P(x)$ & & $X = (X', \exists)$ \\
+& & \\
+$(\forall x \in X')P(x)$ & & $X = (X', \forall)$
+\end{tabular}
+\right.
 \nonumber
 \end{equation}
+
+lo que define el conjunto de predicados reales aceptados por un intervalo modal $A = (A',Q_A)$:
+
+\begin{equation}
+Pred((A',Q_A)) := \{ P(.) \in Pred(\mathbb{R}) : Q(x,(A',Q_A))P(x) \}
+\nonumber
+\end{equation}
+
+Esta definición del cuantificador modal $Q$ nos obliga a introducir un cambio en la notación clásica para los cuantificadores. En lo sucesivo:
+
+\begin{itemize}
+\item Usaremos $\exists(x,X')$ en lugar de $\exists x \in X'$.
+\item Usaremos $\forall(x,X')$ en lugar de $\forall x \in X'$.
+\end{itemize}
+
+
+\section{Conclusiones}
+
+En este capítulo hemos definido e introducido las diferentes propiedades del Análisis de Intervalos. Como hemos explicado, la Aritmética de Intervalos se puede aplicar a diversos campos de investigación para solucionar los problemas de redondeo. Por supuesto las gráficas por ordenador no iban a ser una excepción.
+\par También hay una visión del Análisis de Intervalos Modales, que completa la definición clásica de Análisis de Intervalos mediante aplicación de los cuantificadores a la definición de intervalo. La teoría de Intervalos Modales nos da los intervalos impropios que en la teoría clásica carece de sentido y, en la mayoría de casos, la transformación lleva tal intervalo impropio en uno propio sin explicación lógica. El Análisis de Intervalos Modales nos concede una explicación para tales casos por medipo de las aplicaciones de los teoremas incluidos en este capítulo.
+\par Los teoremas desarrollados son la base para la teoría de Intervalos Modales y, además, nos ayudarán a mejorar el Ray Tracing, o trazado, de superficies implícitas.
