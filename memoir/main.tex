@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{book}
-%\documentclass[a4paper,twoside,11pt,titlepage]{book}
+%\documentclass[a4paper,11pt]{book}
+\documentclass[a4paper,twoside,11pt,titlepage]{book}
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
@@ -176,6 +176,7 @@ pdfproducer = {pdflatex}
 \makeatother
 
 \usepackage{pdfpages}
+\renewcommand{\baselinestretch}{1.25} %Interlineado
 \begin{document}
 \input{cover/cover}
 \input{prefaces/preface}
@@ -190,6 +191,7 @@ pdfproducer = {pdflatex}
 \input{chapters/chapter_01}
 \input{chapters/chapter_02}
 \input{chapters/chapter_03}
+\input{chapters/chapter_04}
 
 \nocite{*}
 \bibliography{references}\addcontentsline{toc}{chapter}{Bibliografía}
