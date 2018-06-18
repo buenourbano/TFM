@@ -1,0 +1,99 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[utf8]{inputenc}
+%\usepackage[applemac]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{kpfonts}
+\usepackage[spanish]{babel}
+\usepackage{emptypage}
+\renewcommand{\shorthandsspanish}{}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage{latexsym} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fourier}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=red, citecolor=blue]{hyperref}
+\newtheorem{defi}{Definici\'on}
+\newtheorem{prop}{Proposici\'on}
+\newtheorem{teo}{Teorema}
+\newtheorem{lem}{Lema}
+\newtheorem{obs}{Observaci\'on}
+
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+	\put(0,0){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight,%
+			keepaspectratio]{fondo.pdf}%
+			\vfill
+}}}
+
+
+\title{Geometría y visualización}
+\author{Jesús Bueno Urbano}
+
+\begin{document}
+
+\begin{titlepage}
+	
+\AddToShipoutPicture*{\BackgroundPic}
+	
+	\newlength{\centeroffset}
+	\setlength{\centeroffset}{-0.5\oddsidemargin}
+	\addtolength{\centeroffset}{0.5\evensidemargin}
+	\thispagestyle{empty}
+
+\vspace*{4cm}
+
+	\noindent\hspace*{\centeroffset}\begin{minipage}{\textwidth}
+		
+		\centering
+		%\includegraphics[width=0.4\textwidth]{logougrnuevo.jpg}\\[1.4cm]
+		
+		\textsc{ \huge Trabajo Fin de M\'aster\\[0.2cm]}
+		\medskip
+		\textsc{ \Large M\'aster en Matem\'aticas}\\[0.8cm]
+		% Upper part of the page
+		% 
+		% Title
+		
+		{\Huge\bfseries \makeatletter \@title \makeatother
+		}
+		
+	\end{minipage}
+	
+	\vspace{2cm}
+	\noindent\hspace*{\centeroffset}\begin{minipage}{\textwidth}
+		\centering
+		\textbf{\large Autor}\\ {\large \makeatletter \@author \makeatother}\\[5.5ex]
+
+	\end{minipage}
+	%\addtolength{\textwidth}{\centeroffset}
+	%\vspace{\stretch{2}}
+	
+	\vfill
+	\begin{minipage}[t][1cm][t]{1.7cm}
+	{\large  {\bf Tutor:}}
+	\end{minipage}\hfill
+	\begin{minipage}[t][1cm][t]{7cm}
+	{\large Carlos Ureña Almagro\\
+	\emph{Departamento de Lenguajes y Sistemas Informáticos}}\\[.7em]
+	{\large Pedro A. García Sánchez\\
+	\emph{Departamento de Álgebra}}
+	\end{minipage}\hfill
+	\begin{minipage}[t][1cm][t]{3.5cm}
+	\large{17/18}
+	\end{minipage}
+	
+\end{titlepage}
+
+
+\end{document}
