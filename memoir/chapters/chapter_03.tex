@@ -147,6 +147,166 @@ Esta definición del cuantificador modal $Q$ nos obliga a introducir un cambio e
 \item Usaremos $\forall(x,X')$ en lugar de $\forall x \in X'$.
 \end{itemize}
 
+A través de la identificación de un intervalo modal con el conjunto de tales predicados reales en los que aceptamos $X \iff P(X)$ surge la inclusión de dos intervalos como la inclusión del conjutno de predicados que aceptan, esto es, si $X, Y  \in I^*(\mathbb{R})$ se tiene:
+
+\begin{equation}
+X \subset Y \iff Pred(X) \subset Pred(Y)
+\nonumber
+\end{equation}
+
+Usando las coordenadas canónicas $X = [x_1,x_2]$ e $Y = [y_1,y_2]$ esta inclusión mantiene el mismo{ \em modus operandi} tradicional, esto es:
+
+\begin{equation}
+[x_1,x_2] \subset [y_1,y_2] \iff y_1 \leq x_1 \leq x_2 \leq y_2
+\nonumber
+\end{equation}
+
+La siguiente figura nos muestra la representación geométrica de los intervalos modales y la relación de inclusión.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{images/florez11.png}
+\caption{La primera imagen nos muestra la representación de los intervalos modales y la segunda las inclusiones y las desigualdades.}
+\end{figure}
+
+Las operaciones{ \em meet} y{ \em join} en $I^*(\mathbb{R})$ para una familia acodata de intervalos modales $A(I) := \{ A(i) = [a_1(i),a_2(i)] \in I^*(\mathbb{R}) : i \in I \}$, donde $I$ es el el dominio de índices, se definen por:
+
+\begin{equation}
+\wedge(i,I) A(i) = A \in I^*(\mathbb{R}) \text{ es  tal que } \forall (i,I) X \subset A(i) \iff X \subset A
+\nonumber
+\end{equation}
+\begin{equation}
+\vee(i,I) A(i) = B \in I^*(\mathbb{R}) \text{ es  tal que } \forall (i,I) X \supset A(i) \iff X \supset B
+\nonumber
+\end{equation}
+
+anotado como $(A \wedge B)$ y $(A \vee B)$ para el caso correspondiente. El resultado, visto como función de los límites de los intervales, es:
+
+\begin{equation}
+\bigwedge_{i \in I} A(i) = [\max_{i \in I} a_1(i), \min_{i \in I} a_2(i)]
+\nonumber
+\end{equation}
+\begin{equation}
+\bigvee_{i \in I} A(i) = [\min_{i \in I} a_1(i), \max_{i \in I} a_2(i)]
+\nonumber
+\end{equation}
+
+Con estas operaciones el conjunto de intervalos modales es un retículo para la $\subset$-relación, mientras que los intervalos clásicos no lo son, por tanto, estamos completando el conjunto de los intervalos clásicos.
+\par Ambos operadores son insotónicos. i.e.,  si $A_i \subset B_i$ para cada $i \in I$, entonces:
+
+\begin{equation}
+\bigwedge_{i \in I} A_i \subset \bigwedge_{i \in I} B_i
+\nonumber
+\end{equation}
+
+\begin{equation}
+\bigvee_{i \in I} A_i \subset \bigvee_{i \in I} B_i
+\nonumber
+\end{equation}
+
+En el conjunto de los números conocémos que hay dos relaciones $\leq$ y $\geq$ y las extensiones de estas relaciones a los intervalos se definen por:
+
+\begin{equation}
+[x_1,x_2] \leq [y_1,y_2] \iff x_i \leq y_i \hspace{0.5cm} i = 1,2
+\nonumber
+\end{equation}
+
+Lo que nos conducea los operadores $\min$ y $\max$ para una familia acotada de intervalos modales $A(I) := \{ A(i) \in I^*(\mathbb{R}) : i \in I \}$ como:
+
+\begin{equation}
+\min_{i \in I} A(i) = A \in I^*(\mathbb{R}) \text{ es  tal que } \forall (i,I) X \leq A(i) \iff X \leq A
+\nonumber
+\end{equation}
+\begin{equation}
+\max_{i \in I} A(i) = B \in I^*(\mathbb{R}) \text{ es  tal que } \forall (i,I) X \geq A(i) \iff X \geq B
+\nonumber
+\end{equation}
+
+Computacionalmente expresado:
+
+\begin{equation}
+\min_{i \in I} A(i) = [\min_{i \in I} a_1(i), \min_{i \in I} a_2(i)]
+\nonumber
+\end{equation}
+
+\begin{equation}
+\max_{i \in I} A(i) = [\max_{i \in I} a_1(i), \max_{i \in I} a_2(i)]
+\nonumber
+\end{equation}
+
+El conjunto de los intervalos modales es, por tanto, un retículo bajo la $\leq$-relación. La siguiente figura nos muestra la representación geométrica de los operadores que hemos definido para dos intervalos:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{images/florez12.png}
+\end{figure}
+
+\subsection{Extensiones semánticas}
+
+En la teoría clásica de Análisis de Intervalos una extensión de una función de $\mathbb{R}^n$ a $\mathbb{R}$ dada por $z = f(x_1, \dotso, x_n)$ es el intervalo de extensión unida $R_f$ de $f$. Para el intervalo $X' = (X_1',\dotso, X_n') \in I(\mathbb{R}^n)$ se define el rango de $f$-valores en $X'$ como:
+
+\begin{equation}
+R_f(X_1',\dotso, X_n') := \{ f(x_1, \dotso, x_n) : x_i \in X_i' \ \forall i \in \{1, \dotso, n \} \} =
+\nonumber
+\end{equation}
+\begin{equation}
+= [\min \{ f(x_1, \dotso, x_n) : x_i \in X_i' \ \forall i \in \{1, \dotso, n \} \}, \max \{ f(x_1, \dotso, x_n) : x_i \in X_i' \ \forall i \in \{1, \dotso, n \} \}]
+\nonumber
+\end{equation}
+
+Para obtener la estimación para la extensión unida, las extensiones racionales del intervalo teórico $fR(X_1', \dotso, X_n')$se definen como su correspondiente función real-racional $f(x_1, \dotso, x_n)$ reemplazando:
+
+\begin{enumerate}
+\item Los argumentos numéricos $x_i$ por sus argumentos de intervalos $X_i'$.
+\item Los operadores aritméticos{ \em reales} $\omega$ por su correspondiene operación entre intervalos la cual, en los casos más comunes de computaciones truncadas de cualquier aritmética tiene que dirigirse al esterior $\omega^R$ debido a la inclusión:
+
+$$X' \omega Y' \subset X' \omega^R Y' := Out(X' \omega Y')$$
+
+Donde $Out$ representa el redondeo exterior del intervalo $X' \omega Y'$.
+\end{enumerate}
+
+Las funciones de intervalos raconales tienen la propiedad, fundamental para todo el cuerpo de Análisis de Intervalos, de ser inclusiva, esto es, para un conjunto de intervalos cumpliendo $X_1' \subset Y_1', \dotso, X_n' \subset Y_n'$ la siguiente relación se cumple, suponiendo que no ocurre  ninguna división entre un intervalo que contenga al cero.
+
+\begin{equation}
+f R(X_1', \dotso, X_n') \subset f R(Y_1', \dotso, Y_n')
+\nonumber
+\end{equation}
+
+La relación entre ambas extensiones es:
+
+\begin{equation}
+R_f(X_1', \dotso, X_n') \subset f R(X_1', \dotso, X_n')
+\nonumber
+\end{equation}
+
+Donde $f R$ es computable a parir de los límites de los intervalos $X_1', \dotso, X_n'$ y normalmente representan una sobrestimación de $R_f(X_1', \dotso, X_n')$.
+\par En el Análisis de Intervalos Modales, un rol similar al de $R_f$ se ve cubierto de forma semántica por las funciones * y **, denotadas por $f^*$ y $f^{**}$ (funciones estrella y doble estrella) y definidas por:
+
+\begin{equation}
+f^*(X) := \bigvee_{x_p \in X_p'} \bigwedge_{x_i \in X_i'} [f(x_p,x_i),f(x_p,x_i)] = \left[ \min_{x_p \in X_p'} \max_{x_i \in X_i'} f(x_p,x_i), \max_{x_p \in X_p'} \min_{x_i \in X_i'} f(x_p,x_i) \right]
+\nonumber
+\end{equation}
+
+\begin{equation}
+f^{**}(X) := \bigwedge_{x_i \in X_i'} \bigvee_{x_p \in X_p'} [f(x_p,x_i),f(x_p,x_i)] = \left[ \max_{x_p \in X_p'} \min_{x_i \in X_i'} f(x_p,x_i), \min_{x_p \in X_p'} \max_{x_i \in X_i'} f(x_p,x_i) \right]
+\nonumber
+\end{equation}
+
+Las cuales tienen, por supuesto, la propiedad de inclusión $f^*(X) \subset f^{**}(X)$. Además:
+
+\begin{equation}
+X \subset Y \Rightarrow f^*(X) \subset f^*(Y) \ \text{ y } \ f^{**}(X) \subset f^{**}(Y)
+\nonumber
+\end{equation}
+
+En algunos casos puede ocurrir que $f^* \equiv f^{**}$.
+\par Los próximos teoremas nos dan una interpretación lógica de las extensiones semánticas.
+
+\begin{theorem}
+nrwvprnpvngrw
+\end{theorem}
+
+\subsection{Interpretabilidad y optimización}
 
 \section{Conclusiones}
 
