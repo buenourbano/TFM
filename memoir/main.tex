@@ -1,5 +1,5 @@
-%\documentclass[a4paper,11pt]{book}
-\documentclass[a4paper,twoside,11pt,titlepage]{book}
+\documentclass[a4paper,11pt]{book}
+%\documentclass[a4paper,twoside,11pt,titlepage]{book}
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
@@ -8,7 +8,7 @@
 
 \usepackage{cite}
 
-% \usepackage[style=list, number=none]{glossary} %
+%\usepackage[style=list, number=none]{glossary} %
 %\usepackage{titlesec}
 %\usepackage{pailatino}
 
@@ -84,13 +84,16 @@ pdfproducer = {pdflatex}
 \renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
 
-\setlength{\headheight}{1.5\headheight}
+\setlength{\headheight}{2\headheight}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\interior}{\operatorname{int}}
+\newcommand{\exterior}{\operatorname{ext}}
 %Definimos los tipos teorema, ejemplo y definición podremos usar estos tipos
 %simplemente poniendo \begin{teorema} \end{teorema} ...
 \theoremstyle{definition}
 \newtheorem{definition}{Definición}[section]
+\newtheorem{theorem}{Teorema}[section]
 \newtheorem{lemma}{Lema}[section]
  
 \theoremstyle{remark}
@@ -175,14 +178,16 @@ pdfproducer = {pdflatex}
 }
 \makeatother
 
+
+
 \usepackage{pdfpages}
 \renewcommand{\baselinestretch}{1.25} %Interlineado
 \begin{document}
-\input{cover/cover}
+\input{cover/cover.tex}
 \input{prefaces/preface}
 \frontmatter
 \tableofcontents %Buscar como eliminar ese número romano
-%\listoffigures
+\listoffigures
 %\listoftables
 %
 \mainmatter
@@ -192,6 +197,7 @@ pdfproducer = {pdflatex}
 \input{chapters/chapter_02}
 \input{chapters/chapter_03}
 \input{chapters/chapter_04}
+\input{chapters/chapter_05}
 
 \nocite{*}
 \bibliography{references}\addcontentsline{toc}{chapter}{Bibliografía}
