@@ -1,0 +1,16 @@
+\chapter{Próximo paso}
+
+Una vez presentado tanto la teoría de Aritmética de Intervalos y una serie de algoritmos de Ray Tracing que usan esta teoría, está claro que el siguiente paso es encontrar técnicas para acelerar estos algoritmos o mejorar la renderización de la imagen sin afectar al coste computacional de éstos.
+
+De acuerdo con Arvo y Kirk \cite{Arvo87} podemos acelerar las técnicas de Ray Tracing de tres maneras:
+\begin{itemize}
+\item Reducción del coste medio del test de intersección.
+\item Reducción del número total de rayos intersecados.
+\item Reemplazando una cierta cantidad de rayos individuales por un haz de rayos.
+\end{itemize}
+
+En \cite{Florez08} se presenta un nuevo método para sacar rendimiento de la llamada coherencia de los rayos a la hora de acelerar el proceso de Ray Tracing en superficies implícitas que ya hemos presentado. En él podemos adaptar la teoría de Intervalos para estudiar el comportamiento de haces de rayos en lugar de cada rayo de forma individual, esto significa que podemos analizar secciones del espacio para conocer la coherencia de los objetos.
+
+Tras generalizar la definición de rayo a haces de rayos para poder tratar un haz como si fuera un solo objeto pasamos a desarrollar dos sencillos algoritmos llamados de{ \em rechazo} y de{ \em inclusión} que nos permiten clasificar los conjuntos de rayos según si todos los rayos del haz intersecan la superficie o si, por el contrario, todos los rayos del haz no la intersecan. En el caso de que ambos algoritmos fallen, es decir, estemos ante un haz que interseque parcialmente al objeto se procede a un proceso de división del espacio en las áreas{ \em problemáticas} y de evaluación de éstas. Como se resultado se obtiene una mejora de la eficiencia, llegando a doblarse en algunos casos.
+
+Por supuesto esto es solo un primer paso de ampliación y esta rama está mucho más desarrollada con  trabajos que recrean sombras mediantes haces de rayos secundarios, aplicaciones para el desarrollo de animaciones, mejoras mediante el uso de GPU... Pero eso ya son temas que se acercan más a la rama de la informática.
