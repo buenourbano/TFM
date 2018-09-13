@@ -175,8 +175,7 @@ Sabemos que $F : K^m \to K^n$ no se puede definir en todo $K^m$ ya que, obviamen
 $$F(t_1, \dotso, t_m) = \left( \frac{f_1(t_1, \dotso, t_m)}{g_1(t_1, \dotso, t_m)}, \dotso, \frac{f_n(t_1, \dotso, t_m)}{g_n(t_1, \dotso, t_m)}  \right)$$
 define la proyección $F : K^m \setminus W \to K^n$.
 
-El objetivo es encontrar la variedad mínima en $K^n$ que contenga $F(K^m / W)$. En la parametrización definida se eliminan las fracciones multiplicando la iésima coordenada por el polinomio $g_i$. Entonces la ecuación $1 - g_1 \dotso g_n y = 0$, para polinomios $g_i$ no nulos en la variedad definida, se añade  y se evalúa la base de Gröbner reducida. Los elementos de la base de Gröbner que no contienen a las variables $t_1, \dotso, t_n, y$ definen la representación implícita de la variedad afín dada.
-\\Una explicación más exhaustiva se puede encontrar en \cite{Hoffmann93}.
+El objetivo es encontrar la variedad mínima en $K^n$ que contenga $F(K^m / W)$. En la parametrización definida se eliminan las fracciones multiplicando la iésima coordenada por el polinomio $g_i$. Entonces la ecuación $1 - g_1 \dotso g_n y = 0$, para polinomios $g_i$ no nulos en la variedad definida, se añade  y se evalúa la base de Gröbner reducida. Los elementos de la base de Gröbner que no contienen a las variables $t_1, \dotso, t_n, y$ definen la representación implícita de la variedad afín dada. Una explicación más exhaustiva se puede encontrar en \cite{Hoffmann93}.
 
 \subsubsection*{Ejemplo}
 
@@ -260,7 +259,7 @@ y los espacios en blanco de la matriz denotan ceros.
 
 Ahora realizaremos un ejemplo sencillo para comparar este método con el de la base de Gröbner.
 
-Sean por ejemplo los polinomios:
+Sean por ejemplo los polinomios en la variable $x$ cuyos coeficeintes son polinomios en la variable $y$
 $$f = x^2 y - 1, \hspace{2cm} g = x^2 + y^2 + xy - 4.$$
 
 Aplicando el método de la resultante de Sylvester tenemos

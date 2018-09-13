@@ -224,6 +224,7 @@ El conjunto de los intervalos modales es, por tanto, un retículo bajo la $\leq$
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{images/florez12.png}
+\caption{Representación de los operadotes meet, join, $\max$ y $\min$.}
 \end{figure}
 
 \subsection{Extensiones semánticas}
@@ -320,7 +321,7 @@ Y, exceptuando el redondeo, ambos teoremas semánticos son aplicables al interva
 El Análisis de Intervalos Modales nos proporciona una serie de resultados sobre inclusiones o igualdades que resuelven parte del problema doble de interpretabilidad de extensiones modales racionales y computabilidad de las expresiones semánticas. Ahora mostraremos varios teoremas que nos muestran resultados sobre la interpretabilidad de extensiones racionales.
 
 \begin{theorem}{\textbf{* interpretabilidad de funciones modales racionales:}}\label{th1}
-Si las componentes impropias de $X$ son uni-incidentes en $f \ R(X)$ y si $Out(f \ R(Prop(X)))$ existe, entonces
+Si las componentes impropias de $X$ son uni-incidentes\footnote{Una componente $x_i$ de una variable $x$ se dice \textit{uni-incidente} en una función continua real $f$ si ocupa una hoja del árbol sintáctico del árbol de $f$. En cualquier otro caso se dice \textit{multi-incidente}. Por ejemplo en la función $f : \mathbb{R}^2 \to \mathbb{R}$, definida por $f(x_1,x_2) = x_2 + \frac{x_1}{x_2}$, $x_1$ es uni-incidente y $x_2$ es multi-incidente.} en $f \ R(X)$ y si $Out(f \ R(Prop(X)))$ existe, entonces
 $$Out(f \ R(X)) \supset f^*(X).$$
 Donde $Out$ representa el redondeo exterior del intervalo $f \ R(X)$.
 \end{theorem}
