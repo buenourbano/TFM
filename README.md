@@ -24,5 +24,7 @@ A continuación haremos una introducción al Análisis de Intervalos y a sus pro
 * **Presidenta:** Evangelina Santos Aláez (Departamento de Álgebra, Universidad de Granada)
 * **Vocal:** María Magdalena Rodríguez Pérez (Departamento de Geometría y Topología, Universidad de Granada)
 * **Secretario:** Miguel Luis Rodríguez González (Departamento de Matemática Aplicada, Universidad de Granada)
-
+<br></br>
+<br></br>
 ![](https://raw.githubusercontent.com/buenourbano/TFM/master/memoir/images/logo_ugr.png)
+<br></br>
