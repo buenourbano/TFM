@@ -26,4 +26,5 @@ A continuación haremos una introducción al Análisis de Intervalos y a sus pro
 * **Secretario:** Miguel Luis Rodríguez González (Departamento de Matemática Aplicada, Universidad de Granada)
 
 <hr></hr>
-*Trabajo Fin de Máster entregado el 17 de septiembre de 2018 y defendido ante tribunal el 21 de septiembre de 2018.*
+
+Trabajo Fin de Máster entregado el 17 de septiembre de 2018 y defendido ante tribunal el 21 de septiembre de 2018.
