@@ -9,6 +9,7 @@ A continuación haremos una introducción al Análisis de Intervalos y a sus pro
 ## Carpetas
 
 * *memoir* contiene todo el trabajo en LaTeX de redacción amén de la versión final del PDF.
+* *slides* contiene el código en LaTeX y la versión final del PDF de la defensa.
 
 ## Información
 
@@ -18,3 +19,11 @@ A continuación haremos una introducción al Análisis de Intervalos y a sus pro
 **Directores:**
 * Pedro A. García Sánchez (Departamento de Álgebra, Universidad de Granada)
 * Carlos Ureña Almagro (Departamento de Lenguajes y Sistemas Informáticos, Universidad de Granada)
+
+**Composición del tribunal**
+* **Presidenta:** Evangelina Santos Aláez (Departamento de Álgebra, Universidad de Granada)
+* **Vocal:** María Magdalena Rodríguez Pérez (Departamento de GEometría y Topología, Universidad de Granada)
+* **Secretario:** Miguel Luis Rodríguez González (Departamento de Matemática Aplicada, Universidad de Granada)
+
+<hr></hr>
+*Trabajo Fin de Máster entregado el 17 de septiembre de 2018 y defendido ante tribunal el 21 de septiembre de 2018.*
