@@ -22,7 +22,7 @@ A continuación haremos una introducción al Análisis de Intervalos y a sus pro
 
 **Composición del tribunal**
 * **Presidenta:** Evangelina Santos Aláez (Departamento de Álgebra, Universidad de Granada)
-* **Vocal:** María Magdalena Rodríguez Pérez (Departamento de GEometría y Topología, Universidad de Granada)
+* **Vocal:** María Magdalena Rodríguez Pérez (Departamento de Geometría y Topología, Universidad de Granada)
 * **Secretario:** Miguel Luis Rodríguez González (Departamento de Matemática Aplicada, Universidad de Granada)
 
 <hr></hr>
