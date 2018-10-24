@@ -10,7 +10,7 @@ A continuación haremos una introducción al Análisis de Intervalos y a sus pro
 
 * *memoir* contiene todo el trabajo en LaTeX de redacción amén de la versión final del PDF.
 * *slides* contiene el código en LaTeX y la versión final del PDF de la defensa realizada el 21 de septiembre de 2018.
-* *rsme* contiene el póster y la presentación realizados para el Premio RSME-UGR Fin de Máster 2018 cuyas bases se pueden consultar ![aquí](https://www.rsme.es/2018/10/premios-rsme-ugr-fin-de-master-y-fin-de-grado-2018).
+* *rsme* contiene el póster y la presentación realizados para el Premio RSME-UGR Fin de Máster 2018 cuyas bases se pueden consultar [aquí](https://www.rsme.es/2018/10/premios-rsme-ugr-fin-de-master-y-fin-de-grado-2018).
 
 ## Información
 
