@@ -21,7 +21,7 @@ A continuación haremos una introducción al Análisis de Intervalos y a sus pro
 * Pedro A. García Sánchez (Departamento de Álgebra, Universidad de Granada)
 * Carlos Ureña Almagro (Departamento de Lenguajes y Sistemas Informáticos, Universidad de Granada)
 
-**Composición del tribunal**
+**Composición del tribunal del Trabajo Fin de Máster**
 * **Presidenta:** Evangelina Santos Aláez (Departamento de Álgebra, Universidad de Granada)
 * **Vocal:** María Magdalena Rodríguez Pérez (Departamento de Geometría y Topología, Universidad de Granada)
 * **Secretario:** Miguel Luis Rodríguez González (Departamento de Matemática Aplicada, Universidad de Granada)
