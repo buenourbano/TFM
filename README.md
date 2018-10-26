@@ -14,10 +14,10 @@ A continuación haremos una introducción al Análisis de Intervalos y a sus pro
 
 ## Información
 
-**Autor:**
+**Autor**
 * Jesús Bueno Urbano (Máster en Matemáticas, Universidad de Granada)
 
-**Directores:**
+**Directores**
 * Pedro A. García Sánchez (Departamento de Álgebra, Universidad de Granada)
 * Carlos Ureña Almagro (Departamento de Lenguajes y Sistemas Informáticos, Universidad de Granada)
 
