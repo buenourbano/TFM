@@ -6,7 +6,7 @@ Ya en el segundo capítulo el tema principal de éste será buscar métodos de v
 
 A continuación haremos una introducción al Análisis de Intervalos y a sus propiedades, a los Intervalos Modales y a las llamadas extensiones semánticas. Todo esto nos servirá para, finalmente, aplicarlo al Ray Tracing y así presentar varios algoritmos mejorados cuya eficiencia compararemos.
 
-## Carpetas
+## Directorios
 
 * *memoir* contiene todo el trabajo en LaTeX de redacción amén de la versión final del PDF.
 * *slides* contiene el código en LaTeX y la versión final del PDF de la defensa realizada el 21 de septiembre de 2018.
